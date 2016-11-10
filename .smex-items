@@ -1,0 +1,26 @@
+
+;; ----- smex-history -----
+(
+ company-yasnippet
+ customize-variable
+ yas-new-snippet
+ yas/about
+ snippet-mode
+ find-file
+ ag
+)
+
+;; ----- smex-data -----
+(
+ (shell . 2)
+ (ag . 2)
+ (find-file . 8)
+ (company-yasnippet . 14)
+ (package-list-packages . 1)
+ (snippet-mode . 1)
+ (yas/about . 2)
+ (yas-new-snippet . 1)
+ (customize-variable . 1)
+ (rinari-find-model . 1)
+ (tab-indent-or-complete . 1)
+)
