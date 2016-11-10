@@ -37,8 +37,8 @@
 
 
 ;;(when (maybe-require-package 'swiper)
-;;  (after-load 'ivy
-;;    (define-key ivy-mode-map (kbd "C-s") 'swiper)))
+  (after-load 'ivy
+    (define-key ivy-mode-map (kbd "C-s") 'swiper))
 
 
 

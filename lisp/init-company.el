@@ -54,8 +54,8 @@
   backend
 (append (if (consp backend) backend (list backend))
         '(:with company-yasnippet))))
- :after company should use “（with-eval-after-load 'company...“ 
-      :config
+ ;; xafter company should use “（with-eval-after-load 'company...“ 
+ ;     :config
 (with-eval-after-load 'company
   (setq company-backends (mapcar #'company-mode/backend-with-yas company-backends)))
 
