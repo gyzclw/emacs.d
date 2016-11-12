@@ -22,6 +22,7 @@
 (require 'init-benchmarking) ;; Measure startup time
 (defconst *spell-check-support-enabled* nil) ;; Enable with t if you prefer
 (defconst *is-a-mac* (eq system-type 'darwin))
+(setq auto-save-default nil)
 
 ;;----------------------------------------------------------------------------
 ;; Bootstrap config
@@ -62,3 +63,12 @@
 (require 'init-company)
 (require 'init-ruby-mode)
 (require 'init-rails)
+(require 'init-windows)
+(require 'init-git)
+(require 'init-github)
+(require 'init-org)
+(require 'init-whitespace)
+(require 'init-javascript)
+(require 'init-markdown)
+(require 'init-dash)
+(require 'init-latex)

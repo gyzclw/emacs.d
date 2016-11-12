@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: rcabel
+# key: rcabel
+# --
+mount Actioncable.server => '/cable'

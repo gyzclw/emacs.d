@@ -1,28 +1,43 @@
 
 ;; ----- smex-history -----
 (
- isearch-occur
- swiper
+ org-latex-export-to-pdf
+ package-list-packages
  company-yasnippet
- customize-variable
+ find-file
+ ibuffer
  yas-new-snippet
- yas/about
- snippet-mode
+ regexp-builder
 )
 
 ;; ----- smex-data -----
 (
  (shell . 2)
  (ag . 2)
- (find-file . 8)
- (company-yasnippet . 15)
- (package-list-packages . 1)
+ (find-file . 49)
+ (company-yasnippet . 20)
+ (package-list-packages . 7)
  (snippet-mode . 1)
  (yas/about . 2)
- (yas-new-snippet . 1)
+ (yas-new-snippet . 2)
  (customize-variable . 1)
  (rinari-find-model . 1)
  (tab-indent-or-complete . 1)
  (swiper . 1)
  (isearch-occur . 1)
+ (raise-frame . 1)
+ (bundle-install . 1)
+ (inf-ruby . 1)
+ (xterm-paste . 1)
+ (ftp . 1)
+ (org-todo . 1)
+ (org-kill-line . 1)
+ (org-html-export-as-html . 3)
+ (recover-file . 1)
+ (rinari-web-server . 1)
+ (rinari-find-routes . 1)
+ (ivy-toggle-fuzzy . 1)
+ (regexp-builder . 1)
+ (ibuffer . 5)
+ (org-latex-export-to-pdf . 13)
 )

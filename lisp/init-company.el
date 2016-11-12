@@ -58,5 +58,11 @@
  ;     :config
 (with-eval-after-load 'company
   (setq company-backends (mapcar #'company-mode/backend-with-yas company-backends)))
+(require-package 'emmet-mode)
+(require-package 'company-web)
+(add-hook 'web-mode-hook 'emmet-mode)
+(add-hook 'web-mode-hook (lambda ()
+                            (set (make-local-variable 'company-backends) '(company-web-html company-files))
+                            (company-mode t)))
 
 (provide 'init-company)
