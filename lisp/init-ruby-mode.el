@@ -1,7 +1,7 @@
 ;;; Basic ruby setup
 (require-package 'ruby-mode)
 (require-package 'ruby-hash-syntax)
-
+(require-package 'rubocop)
 (add-auto-mode 'ruby-mode
                "Rakefile\\'" "\\.rake\\'" "\\.rxml\\'"
                "\\.rjs\\'" "\\.irbrc\\'" "\\.pryrc\\'" "\\.builder\\'" "\\.ru\\'"
@@ -90,4 +90,6 @@
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-hook 'ruby-mode-hook #'rubocop-mode)
+
 (provide 'init-ruby-mode)

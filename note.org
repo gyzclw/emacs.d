@@ -1,0 +1,8 @@
+#+STYLE: <link rel="stylesheet" type="text/css" href="http://orgmode.org/org.css"/>
+* emacs setting error deal
+** Most of the theme colors are broken for me
+
+#+begin_src emacs-lisp
+;; Colortheme fix in terminal
+  (custom-set-faces (if (not window-system) '(default ((t (:background "nil"))))))
+#+end_src

@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c+c1}{;; Colortheme fix in terminal}
+  \PYG{p}{(}\PYG{n+nv}{custom\PYGZhy{}set\PYGZhy{}faces} \PYG{p}{(}\PYG{k}{if} \PYG{p}{(}\PYG{n+nb}{not} \PYG{n+nv}{window\PYGZhy{}system}\PYG{p}{)} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{n+nv}{default} \PYG{p}{((}\PYG{n+no}{t} \PYG{p}{(}\PYG{l+s+ss}{:background} \PYG{l+s}{\PYGZdq{}nil\PYGZdq{}}\PYG{p}{))))))}
+\end{Verbatim}

@@ -1,0 +1,41 @@
+% Created 2016-11-14 Mon 13:18
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{minted}
+\author{黄金贵}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={黄金贵},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 25.1.1 (Org mode 9.0)}, 
+ pdflang={English}}
+\begin{document}
+
+\tableofcontents
+
+\section{emacs setting error deal}
+\label{sec:org8154cab}
+\subsection{Most of the theme colors are broken for me}
+\label{sec:org8a237ca}
+
+\begin{minted}[mathescape=true,linenos=true,numbersep=5pt,frame=lines,framesep=2mm]{common-lisp}
+;; Colortheme fix in terminal
+  (custom-set-faces (if (not window-system) '(default ((t (:background "nil"))))))
+\end{minted}
+\end{document}

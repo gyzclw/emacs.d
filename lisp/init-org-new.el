@@ -9,7 +9,6 @@
 
 (define-key global-map (kbd "C-c l") 'org-store-link)
 (define-key global-map (kbd "C-c a") 'org-agenda)
-
 ;; Various preferences
 (setq org-log-done t
       org-edit-timestamp-down-means-later t
@@ -21,9 +20,7 @@
       org-html-validation-link nil
       org-export-kill-product-buffer-when-displayed t
       org-tags-column 80)
-
-
-;; Lots of stuff from http://doc.norang.ca/org-mode.html
+      ;; Lots of stuff from http://doc.norang.ca/org-mode.html
 
 (defun sanityinc/grab-ditaa (url jar-name)
   "Download URL and extract JAR-NAME as `org-ditaa-jar-path'."
@@ -48,9 +45,6 @@
       (setq org-ditaa-jar-path (expand-file-name jar-name (file-name-directory user-init-file)))
       (unless (file-exists-p org-ditaa-jar-path)
         (sanityinc/grab-ditaa url jar-name)))))
-
-
-
 (define-minor-mode prose-mode
   "Set up a buffer for prose editing.
 This enables or modifies a number of settings so that the
@@ -80,7 +74,6 @@ typical word processor."
     (flyspell-mode -1)
     (when (fboundp 'visual-line-mode)
       (visual-line-mode -1))))
-
 ;;(add-hook 'org-mode-hook 'buffer-face-mode)
 
 
@@ -96,9 +89,6 @@ typical word processor."
         ("n" "note" entry (file "")
          "* %? :NOTE:\n%U\n%a\n" :clock-resume t)
         ))
-
-
-
 ;;; Refiling
 
 (setq org-refile-use-cache nil)
@@ -108,7 +98,6 @@ typical word processor."
 
 (after-load 'org-agenda
   (add-to-list 'org-agenda-after-show-hook 'org-show-entry))
-
 ;; Exclude DONE state tasks from refile targets
 (defun sanityinc/verify-refile-target ()
   "Exclude todo keywords with a done state from refile targets."
@@ -128,8 +117,6 @@ typical word processor."
 
 ;; Allow refile to create parent tasks with confirmation
 (setq org-refile-allow-creating-parent-nodes 'confirm)
-
-
 ;;; To-do settings
 
 (setq org-todo-keywords
@@ -141,10 +128,7 @@ typical word processor."
 (setq org-todo-keyword-faces
       (quote (("NEXT" :inherit warning)
               ("PROJECT" :inherit font-lock-string-face))))
-
-
-
-;;; Agenda views
+              ;;; Agenda views
 
 (setq-default org-agenda-clockreport-parameter-plist '(:link t :maxlevel 3))
 
@@ -226,11 +210,7 @@ typical word processor."
             ;;            ((org-agenda-overriding-header "All other TODOs")
             ;;             (org-match-list-sublevels t)))
             )))))
-
-
 (add-hook 'org-agenda-mode-hook 'hl-line-mode)
-
-
 ;;; Org clock
 
 ;; Save the running clock and all clock history when exiting Emacs, load it on startup
@@ -290,7 +270,6 @@ typical word processor."
   (add-hook 'org-clock-out-hook 'sanityinc/remove-empty-drawer-on-clock-out 'append))
 
 
-
 ;; TODO: warn about inconsistent items, e.g. TODO inside non-PROJECT
 ;; TODO: nested projects!
 
@@ -338,10 +317,18 @@ typical word processor."
     (define-key org-mode-map (kbd "M-h") nil)
     (define-key org-mode-map (kbd "C-c g") 'org-mac-grab-link)))
 
+    ; (eval-after-load "tex" 
+;   '(setcdr (assoc "LaTeX" TeX-command-list)
+;           '("%`%l%(mode) -shell-escape%' %t"
+;           TeX-run-TeX nil (latex-mode doctex-mode) :help "Run LaTeX")
+;     )
+;   )
+
 (after-load 'org
   (org-babel-do-load-languages
    'org-babel-load-languages
-   `((ditaa . t)
+   `(
+     (ditaa . t)
      (dot . t)
      (emacs-lisp . t)
      (gnuplot . t)
@@ -362,8 +349,6 @@ typical word processor."
 ;           TeX-run-TeX nil (latex-mode doctex-mode) :help "Run LaTeX")
 ;     )
 ;   )
-
-
 (when (require 'ox-latex nil 'noerror)
   ;; You need to install pygments to use minted
   (when (executable-find "pygmentize")
@@ -385,8 +370,4 @@ typical word processor."
       '("xelatex -shell-escape  -interaction nonstopmode -output-directory %o %f"
         "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
         "xelatex -shell-escape  -interaction nonstopmode -output-directory %o %f"))))
-(setq org-html-doctype "html5")
-(setq org-html-xml-declaration nil)
-(setq org-html-postamble nil)
-
-(provide 'init-org)
+(provide 'init-org-new)

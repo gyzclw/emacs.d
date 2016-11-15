@@ -2,6 +2,6 @@
 # name: chinese
 # key: chinese
 # --
-s
+
 #+LATEX_HEADER: \usepackage{xeCJK}
 #+LATEX_HEADER: \setCJKmainfont{Songti SC}

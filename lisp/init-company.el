@@ -64,5 +64,6 @@
 (add-hook 'web-mode-hook (lambda ()
                             (set (make-local-variable 'company-backends) '(company-web-html company-files))
                             (company-mode t)))
-
+(eval-after-load 'company
+    '(push 'company-robe company-backends))
 (provide 'init-company)

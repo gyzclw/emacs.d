@@ -1,7 +1,11 @@
 (require-package 'color-theme-sanityinc-solarized)
 (require-package 'color-theme-sanityinc-tomorrow)
-(load-theme 'molokai 1)
+(require-package 'dracula-theme)
+;;(load-theme 'molokai 1)
+  (custom-set-faces (if (not window-system) '(default ((t (:background "nil"))))))
 
+
+(load-theme 'dracula t)
 ;; If you don't customize it, this is the theme you get.
 
 ;; Ensure that themes will be applied even if they have not been customized
@@ -28,5 +32,7 @@
   (interactive)
   (color-theme-sanityinc-molokai))
 
-
+(require 'spaceline-config)
+(spaceline-spacemacs-theme)
+(setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
 (provide 'init-themes)

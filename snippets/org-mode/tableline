@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: tableline
+# key: tableline
+# --
+#+attr_latex: :align |c|c|c| 
