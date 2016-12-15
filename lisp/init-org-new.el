@@ -370,4 +370,6 @@ typical word processor."
       '("xelatex -shell-escape  -interaction nonstopmode -output-directory %o %f"
         "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
         "xelatex -shell-escape  -interaction nonstopmode -output-directory %o %f"))))
+(add-to-list
+  'org-src-lang-modes '("plantuml" . plantuml))
 (provide 'init-org-new)

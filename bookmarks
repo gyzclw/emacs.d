@@ -1,0 +1,10 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("河北旧程序api.org"
+ (filename . "~/Dropbox/文档/公司文档/开发文档/河北旧程序/河北旧程序api.org")
+ (front-context-string . "** 交易提交\n\n#+BEGIN")
+ (rear-context-string . "+------------|\n\n")
+ (position . 1379))
+)

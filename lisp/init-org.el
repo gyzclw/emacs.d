@@ -343,6 +343,7 @@ typical word processor."
    'org-babel-load-languages
    `((ditaa . t)
      (dot . t)
+     (R . t)
      (emacs-lisp . t)
      (gnuplot . t)
      (haskell . nil)
@@ -351,18 +352,21 @@ typical word processor."
      (ocaml . nil)
      (octave . t)
      (python . t)
+     (R . t)
      (ruby . t)
+     (plantuml . t)
      (screen . nil)
      (,(if (locate-library "ob-sh") 'sh 'shell) . t)
      (sql . nil)
      (sqlite . t))))
+
+
 ; (eval-after-load "tex" 
 ;   '(setcdr (assoc "LaTeX" TeX-command-list)
 ;           '("%`%l%(mode) -shell-escape%' %t"
 ;           TeX-run-TeX nil (latex-mode doctex-mode) :help "Run LaTeX")
 ;     )
 ;   )
-
 
 (when (require 'ox-latex nil 'noerror)
   ;; You need to install pygments to use minted
@@ -377,16 +381,33 @@ typical word processor."
     ;; This obviously and can be dangerous to activate!
     (setq org-latex-minted-options
           '(("mathescape" "true")
-            ("linenos" "true")
+            ("linenos" "false")
             ("numbersep" "5pt")
             ("frame" "lines")
             ("framesep" "2mm")))
-    (setq org-latex-pdf-process
+   (add-to-list 'org-latex-classes
+                '("template"
+                  "\\documentclass{report}
+\\input{/Users/hjg/Dropbox/tex/structure.tex} % Include the structure.tex file which specified the document structure and layout               
+\\hyphenation{Fortran hy-phen-ation} 
+"
+                  ("\\chapter{%s}" . "\\chapter*{%s}")
+                  ("\\section{%s}" . "\\section*{%s}")
+                  ("\\subsection{%s}" . "\\subsection*{%s}")
+                  ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
+(setq org-latex-pdf-process
       '("xelatex -shell-escape  -interaction nonstopmode -output-directory %o %f"
         "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
         "xelatex -shell-escape  -interaction nonstopmode -output-directory %o %f"))))
+
+
 (setq org-html-doctype "html5")
 (setq org-html-xml-declaration nil)
 (setq org-html-postamble nil)
+
+(add-to-list
+  'org-src-lang-modes '("plantuml" . plantuml))
+(setq org-plantuml-jar-path
+      "/usr/local/Cellar/plantuml/8048/libexec/plantuml.jar")
 
 (provide 'init-org)

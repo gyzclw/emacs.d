@@ -19,20 +19,12 @@
 (setq make-backup-files nil)
 
 
+
 (require 'init-benchmarking) ;; Measure startup time
 (defconst *spell-check-support-enabled* nil) ;; Enable with t if you prefer
 (defconst *is-a-mac* (eq system-type 'darwin))
 (setq auto-save-default nil)
-(defun my-yes-or-mumble-p (prompt)
-    "PROMPT user with a yes-or-no question, but only test for yes."
-    (if (string= "yes"
-		 (downcase
-		  (read-from-minibuffer
-		   (concat prompt "(yes or no) "))))
-	t
-      nil))
 
-    (defalias 'yes-or-no-p 'my-yes-or-mumble-p)
 ;;----------------------------------------------------------------------------
 ;; Bootstrap config
 ;;----------------------------------------------------------------------------
@@ -75,10 +67,13 @@
 (require 'init-windows)
 (require 'init-git)
 (require 'init-github)
-;;(require 'init-org-new)
+; (require 'init-org-new)
 (require 'init-org)
 (require 'init-whitespace)
 (require 'init-javascript)
 (require 'init-markdown)
 (require 'init-dash)
 (require 'init-latex)
+(require 'init-hydra)
+(require 'init-smartparens)
+(require 'init-sh)
